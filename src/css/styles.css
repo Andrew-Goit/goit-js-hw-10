@@ -14,7 +14,44 @@ body {
 
 #search-box {
   font: inherit;
+  font-size: 20px;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  margin-left: 20px;
 }
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+.country-list__item {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.flag {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+.country-list__item {
+  font-size: 20px;
+}
+.parameter {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.value {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(80, 80, 80);
+}
+
