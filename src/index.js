@@ -16,13 +16,8 @@ input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput (event){
     fetchCountries(event.target.value.trim())
-    .then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-    return response.json();
-  }).then(lengthChecking)
-  .catch((error)=> {
+    .then(lengthChecking)
+    .catch((error)=> {
     console.log(error);
     Notiflix.Notify.failure('Oops, there is no country with that name');
     clearList() 
