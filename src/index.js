@@ -16,15 +16,15 @@ input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput (event) {
     if (event.target.value === "") {
-        return;
+        clearList()
     }
     fetchCountries(event.target.value.trim())
     .then(lengthChecking)
     .catch((error)=> {
-    console.log(error);
-    Notiflix.Notify.failure('Oops, there is no country with that name');
-    clearList() 
-});
+        console.log(error);
+        Notiflix.Notify.failure('Oops, there is no country with that name');
+        clearList() 
+    });
 }
 // function error(err) {
 //         console.log(err);
