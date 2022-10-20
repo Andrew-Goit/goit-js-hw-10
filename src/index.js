@@ -14,7 +14,10 @@ const coutnryInfo = document.querySelector('.country-info');
 
 input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
-function onInput (event){
+function onInput (event) {
+    if (event.target.value === "") {
+        return;
+    }
     fetchCountries(event.target.value.trim())
     .then(lengthChecking)
     .catch((error)=> {
@@ -29,7 +32,7 @@ function onInput (event){
 //         clearList();
 // }
 
-function lengthChecking(countries){
+function lengthChecking(countries) {
     clearList()
     if (countries.length > 10) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
