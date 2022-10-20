@@ -16,7 +16,7 @@ input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput (event) {
     if (event.target.value === "") {
-        clearList()
+        return;
     }
     fetchCountries(event.target.value.trim())
     .then(lengthChecking)
